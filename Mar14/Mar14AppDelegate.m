@@ -22,7 +22,7 @@
     
 	NSString *filename = [bundle pathForResource: @"BlanchesLunch" ofType: @"mp4"];
 	if (filename == nil) {
-		NSLog(@"could not find file sneeze.m4v");
+		NSLog(@"could not find file BlanchesLunch");
 		return YES;
 	}
     
@@ -32,6 +32,16 @@
 		return YES;
 	}
     
+    NSString *audioFilename = [bundle pathForResource: @"suspense_" ofType: @"mp3"];
+	NSLog(@"filename == \"%@\"", audioFilename);
+    
+	NSURL *audioUrl = [NSURL fileURLWithPath: audioFilename isDirectory: NO];
+	NSLog(@"url == \"%@\"", audioUrl);
+    
+	OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)audioUrl, &sid);
+	if (error != kAudioServicesNoError) {
+		NSLog(@"AudioServicesCreateSystemSoundID error == %ld", error);
+	}
 	controller = [[MPMoviePlayerController alloc] init];
 	if (controller == nil) {
 		NSLog(@"could not create MPMoviePlayerController");
@@ -108,11 +118,26 @@
 
 - (void) touchUpInside: (id) sender {
 	//sender is the button.
-	controller.view.frame = view.frame;
+    
+    NSLog(@"The \"%@\" button was pressed.",
+		  [sender titleForState: UIControlStateNormal]);
+    
+    AudioServicesPlaySystemSound(sid);
+    
+    [self performSelector: @selector(introEnded) withObject: nil
+               afterDelay: 2.5 ];
+    
+}
+
+- (void) introEnded {	//called when no tap is currently being received
+	AudioServicesRemoveSystemSoundCompletion( sid );
+    AudioServicesDisposeSystemSoundID( sid );
+    controller.view.frame = view.frame;
 	[view removeFromSuperview];
 	[self.window addSubview: controller.view];
 	[controller play];
 }
+
 
 #pragma mark -
 #pragma mark Application delegate is observer of MPMoviePlayerController.
@@ -125,6 +150,13 @@
 }
 - (void) dealloc {
 	[device endGeneratingDeviceOrientationNotifications];
+    
+    OSStatus error = AudioServicesDisposeSystemSoundID(sid);
+	if (error != kAudioServicesNoError) {
+		NSLog(@"AudioServicesDisposeSystemSoundID error == %ld", error);
+	}
 }
+
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>	//needed for MPMoviePlayerController
+#import <AudioToolbox/AudioToolbox.h>
 @class View;
 
 @interface Mar14AppDelegate : UIResponder <UIApplicationDelegate> {
@@ -15,6 +16,7 @@
 	View *view;
 	UIWindow *_window;
     UIDevice *device;
+    SystemSoundID sid;
 }
 @property (strong, nonatomic) UIWindow *window;
 

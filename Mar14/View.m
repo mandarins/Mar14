@@ -44,7 +44,7 @@
 	}
 	return self;
 }
-
+/*
 
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.
@@ -59,8 +59,24 @@
                                s.width,
                                s.height
                                );
+     
+     NSArray *a = [NSArray arrayWithObjects:
+                   @"Unknown",
+                   @"Portrait",
+                   @"PortraitUpsideDown",
+                   @"LandscapeRight",	//home button on right
+                   @"LandscapeLeft",	//home button on left
+                   @"FaceUp",
+                   @"FaceDown",
+                   nil
+                   ];
+     
+     NSUInteger i = [UIDevice currentDevice].orientation;
+     NSString *string = [a objectAtIndex: i];
+     UIFont *font = [UIFont systemFontOfSize: 32];
+     [string drawAtPoint: CGPointZero withFont: font];
     
  }
-
+*/
 
 @end

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E31BEBEB16EECBF300C6770F /* BlanchesLunch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E31BEBEA16EECBF300C6770F /* BlanchesLunch.mp4 */; };
 		E31BEBED16EED19B00C6770F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31BEBEC16EED19B00C6770F /* MediaPlayer.framework */; };
+		E326066D16F15C6B00F227A0 /* suspense_.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E326066C16F15C6B00F227A0 /* suspense_.mp3 */; };
+		E326067216F15EFF00F227A0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E326067016F15E6D00F227A0 /* AudioToolbox.framework */; };
 		E3F29BBC16EE6AA9001A0200 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F29BBB16EE6AA9001A0200 /* UIKit.framework */; };
 		E3F29BBE16EE6AA9001A0200 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F29BBD16EE6AA9001A0200 /* Foundation.framework */; };
 		E3F29BC016EE6AA9001A0200 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F29BBF16EE6AA9001A0200 /* CoreGraphics.framework */; };
@@ -24,6 +26,9 @@
 /* Begin PBXFileReference section */
 		E31BEBEA16EECBF300C6770F /* BlanchesLunch.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlanchesLunch.mp4; sourceTree = "<group>"; };
 		E31BEBEC16EED19B00C6770F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E326066C16F15C6B00F227A0 /* suspense_.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = suspense_.mp3; sourceTree = "<group>"; };
+		E326066E16F15E4600F227A0 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		E326067016F15E6D00F227A0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E3F29BB816EE6AA9001A0200 /* Mar14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mar14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F29BBB16EE6AA9001A0200 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E3F29BBD16EE6AA9001A0200 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E326067216F15EFF00F227A0 /* AudioToolbox.framework in Frameworks */,
 				E31BEBED16EED19B00C6770F /* MediaPlayer.framework in Frameworks */,
 				E3F29BBC16EE6AA9001A0200 /* UIKit.framework in Frameworks */,
 				E3F29BBE16EE6AA9001A0200 /* Foundation.framework in Frameworks */,
@@ -59,6 +65,8 @@
 		E3F29BAF16EE6AA9001A0200 = {
 			isa = PBXGroup;
 			children = (
+				E326067016F15E6D00F227A0 /* AudioToolbox.framework */,
+				E326066E16F15E4600F227A0 /* AudioUnit.framework */,
 				E31BEBEC16EED19B00C6770F /* MediaPlayer.framework */,
 				E3F29BC116EE6AA9001A0200 /* Mar14 */,
 				E3F29BBA16EE6AA9001A0200 /* Frameworks */,
@@ -96,6 +104,7 @@
 		E3F29BC216EE6AA9001A0200 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E326066C16F15C6B00F227A0 /* suspense_.mp3 */,
 				E31BEBEA16EECBF300C6770F /* BlanchesLunch.mp4 */,
 				E3F29BC316EE6AA9001A0200 /* Mar14-Info.plist */,
 				E3F29BC416EE6AA9001A0200 /* InfoPlist.strings */,
@@ -176,6 +185,7 @@
 				E3F29BD016EE6AA9001A0200 /* Default@2x.png in Resources */,
 				E3F29BD216EE6AA9001A0200 /* Default-568h@2x.png in Resources */,
 				E31BEBEB16EECBF300C6770F /* BlanchesLunch.mp4 in Resources */,
+				E326066D16F15C6B00F227A0 /* suspense_.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
